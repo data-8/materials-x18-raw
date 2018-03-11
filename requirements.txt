@@ -1,3 +1,4 @@
 datascience
 okpy
 numpy
+matplotlib
