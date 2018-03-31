@@ -3,11 +3,11 @@
 
 # # Lab 1: Introduction to Python
 # 
-# Welcome to Data Science 8.1X Foundations of Data Science: Computational Thinking with Python!  Each week you will complete a lab assignment like this one.  In this course, you will learn basics of computational thinking, an essential skill in today’s data-driven world, using the popular programming language, Python.  You can't learn technical subjects without hands-on practice, so labs are an important part of the course.
+# Welcome to Data Science 8.1x Foundations of Data Science: Computational Thinking with Python!  Each week you will complete a lab assignment like this one.  In this course, you will learn basics of computational thinking, an essential skill in today’s data-driven world, using the popular programming language, Python.  You can't learn technical subjects without hands-on practice, so labs are an important part of the course.
 # 
 # Please complete this notebook by filling in the cells provided. Before you begin, execute the following cell to load the provided autograder tests. If you pass all the autograder tests, you will receive full credit for the lab.
 # 
-# In this lab, you'll get started with the Python programming language through numbers, names, and expressions.  You'll also get a brief introduction to tables.
+# In this lab, you'll get started with the Python programming language through numbers, names, and expressions.
 
 # In[ ]:
 
@@ -24,13 +24,13 @@ ok = Notebook('lab01.ok')
 # 
 # Quantitative information arises everywhere in data science. In addition to representing commands to print out lines, expressions can represent numbers and methods of combining numbers. The expression `3.2500` evaluates to the number 3.25. (Run the cell and see.)
 
-# In[66]:
+# In[ ]:
 
 
 3.2500
 
 
-# Notice that we didn't have to `print`. When you run a notebook cell, if the last line has a value, then Jupyter helpfully prints out that value for you. However, it won't print out prior lines automatically.
+# Notice that we didn't have to `print`. When you run a notebook cell, if the last line has a value, then Jupyter helpfully prints out that value for you. However, it won't print out prior lines automatically. If you want to print out a prior line, you need to add the `print` statement. Run the cell below to check.
 
 # In[ ]:
 
@@ -486,12 +486,13 @@ _ = ok.grade('q411')
 
 # Congratulations, you're done with lab 1!  Be sure to 
 # - **run all the tests and verify that they all pass** (the next cell has a shortcut for that), 
+# - **Review the notebook one last time, we will be grading the final state of your notebook after the deadline**,
 # - **Save and Checkpoint** from the `File` menu,
-# - **run the last cell to submit your work**,
 
 # In[ ]:
 
 
 # For your convenience, you can run this cell to run all the tests at once!
-_ = ok.score()
+import os
+_ = [ok.grade(q[:-3]) for q in os.listdir("tests") if q.startswith('q')]
 

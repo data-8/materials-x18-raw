@@ -603,12 +603,13 @@ _ = ok.grade('q6_7')
 # 
 # Congratulations, you're done with lab 3!  Be sure to 
 # - **run all the tests and verify that they all pass** (the next cell has a shortcut for that), 
+# - **Review the notebook one last time, we will be grading the final state of your notebook after the deadline**,
 # - **Save and Checkpoint** from the `File` menu,
-# - **run the last cell to submit your work**,
 
 # In[ ]:
 
 
 # For your convenience, you can run this cell to run all the tests at once!
-_ = ok.score()
+import os
+_ = [ok.grade(q[:-3]) for q in os.listdir("tests") if q.startswith('q')]
 

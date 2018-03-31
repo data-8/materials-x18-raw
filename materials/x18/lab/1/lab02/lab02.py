@@ -853,7 +853,7 @@ _ = ok.grade('q435')
 
 # A natural example of how we can use arrays to reduce large amounts of computation is growth rates. 
 # 
-# **Question 4.4.1** <br/>Let's say we are investing in stocks, and we initially invest 10.23 dollars into the market. We check back in one year later, and we see that our total money in the market is now 14.32 dollars. What was our anual growth rate?
+# **Question 4.4.1** <br/>Let's say we are investing in stocks, and we initially invest 10.23 dollars into the market. We check back in one year later, and we see that our total money in the market is now 14.32 dollars. What was our annual growth rate?
 
 # In[ ]:
 
@@ -927,12 +927,13 @@ _ = ok.grade('q444')
 
 # Congratulations, you're done with lab 2!  Be sure to 
 # - **run all the tests and verify that they all pass** (the next cell has a shortcut for that), 
+# - **Review the notebook one last time, we will be grading the final state of your notebook after the deadline**,
 # - **Save and Checkpoint** from the `File` menu,
-# - **run the last cell to submit your work**,
 
 # In[ ]:
 
 
 # For your convenience, you can run this cell to run all the tests at once!
-_ = ok.score()
+import os
+_ = [ok.grade(q[:-3]) for q in os.listdir("tests") if q.startswith('q')]
 

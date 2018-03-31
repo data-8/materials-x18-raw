@@ -5,7 +5,7 @@
 # 
 # Welcome to lab 5!  
 # 
-# This week, we'll learn apply everything we have learned in the course so far to do some investigation and learn about the world. This will be your last lab for Data 8.1X.
+# This week, we'll learn apply everything we have learned in the course so far to do some investigation and learn about the world. This will be your last lab for Data 8.1x.
 # 
 # First, set up the tests and imports by running the cell below.
 
@@ -280,7 +280,7 @@ def fertility_vs_child_mortality(year):
 fertility_vs_child_mortality(1960)
 
 
-# The result of the cell below is interactive. Drag the slider to the right to see how countries have changed over time. You'll find that the great divide between so-called "Western" and "developing" countries that existed in the 1960's has nearly disappeared. This shift in fertility rates is the reason that the global population is expected to grow more slowly in the 21st century than it did in the 19th and 20th centuries.
+# The result of the cell below is interactive. It may take a while to run because it computers 55 tables (one for each year). Drag the slider to the right to see how countries have changed over time. You'll find that the great divide between so-called "Western" and "developing" countries that existed in the 1960's has nearly disappeared. This shift in fertility rates is the reason that the global population is expected to grow more slowly in the 21st century than it did in the 19th and 20th centuries.
 
 # In[ ]:
 
@@ -309,8 +309,8 @@ _ = widgets.interact(fertility_vs_child_mortality,
 # In[ ]:
 
 
-# population = Table.read_table('population.csv')
-# countries = Table.read_table('countries.csv').where('country', are.contained_in(population.group('geo').column(0)))
+population = Table.read_table('population.csv')
+countries = Table.read_table('countries.csv').where('country', are.contained_in(population.group('geo').column(0)))
 poverty = Table.read_table('poverty.csv')
 poverty.show(3)
 
@@ -400,7 +400,7 @@ Circle.map_table(scaled)
 
 # Although people live in extreme poverty throughout the world (with more than 5 million in the United States), the largest numbers are in Asia and Africa.
 
-# **Question 3.5.** <br/>Assign `largest` to a two-column table with the `name` (not the 3-letter code) and `poverty_total` of the 10 countries with the largest number of people living in extreme poverty.
+# **Question 3.4.** <br/>Assign `largest` to a two-column table with the `name` (not the 3-letter code) and `poverty_total` of the 10 countries with the largest number of people living in extreme poverty.
 
 # In[ ]:
 
@@ -415,7 +415,7 @@ largest
 _ = ok.grade('q3_4')
 
 
-# **Question 6.** <br/>Use the function called `poverty_timeline` that takes **the name of a country** as its argument. It should draw a line plot of the number of people living in poverty in that country with time on the horizontal axis. The line plot should have a point for each row in the `poverty` table for that country. Do you understand the code in the two functions? 
+# **Question 3.5.** <br/>Use the function called `poverty_timeline` that takes **the name of a country** as its argument. It should draw a line plot of the number of people living in poverty in that country with time on the horizontal axis. The line plot should have a point for each row in the `poverty` table for that country. Do you understand the code in the two functions? 
 # 
 # Finally, draw the timelines below to see how the world is changing. You can check your work by comparing your graphs to the ones on [gapminder.org](https://goo.gl/lPujuh).
 
@@ -477,14 +477,15 @@ _ = widgets.interact(poverty_timeline, country=list(all_countries))
 
 # ## 4. Submission
 # 
-# Congratulations, you're done with lab 5 and Data 8.1X!  Be sure to 
+# Congratulations, you're done with lab 5 and Data 8.1x!  Be sure to 
 # - **run all the tests and verify that they all pass** (the next cell has a shortcut for that), 
+# - **Review the notebook one last time, we will be grading the final state of your notebook after the deadline**,
 # - **Save and Checkpoint** from the `File` menu,
-# - **run the last cell to submit your work**,
 
 # In[ ]:
 
 
 # For your convenience, you can run this cell to run all the tests at once!
-_ = ok.score()
+import os
+_ = [ok.grade(q[:-3]) for q in os.listdir("tests") if q.startswith('q')]
 
