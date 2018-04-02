@@ -3,28 +3,15 @@
 
 # # Lab 1: Introduction to Python
 # 
-# Welcome to Data Science 8.1x Foundations of Data Science: Computational Thinking with Python!  Each week you will complete a lab assignment like this one.  In this course, you will learn basics of computational thinking, an essential skill in today’s data-driven world, using the popular programming language, Python.  You can't learn technical subjects without hands-on practice, so labs are an important part of the course.
+# Welcome to Lab 1!  Each week you will complete a lab assignment like this one. In this lab, you'll get started with the Python programming language through numbers, names, and expressions.
 # 
-# Please complete this notebook by filling in the cells provided. Before you begin, execute the following cell to load the provided autograder tests. If you pass all the autograder tests, you will receive full credit for the lab.
-# 
-# In this lab, you'll get started with the Python programming language through numbers, names, and expressions.
-
-# In[ ]:
-
-
-import numpy as np
-from datascience import *
-
-# These lines load the tests.
-from client.api.notebook import Notebook
-ok = Notebook('lab01.ok')
-
+# As you go, please regularly select **Save and Checkpoint** from the `File` menu below the Jupyter logo to save your work.
 
 # ## 1. Numbers
 # 
 # Quantitative information arises everywhere in data science. In addition to representing commands to print out lines, expressions can represent numbers and methods of combining numbers. The expression `3.2500` evaluates to the number 3.25. (Run the cell and see.)
 
-# In[ ]:
+# In[1]:
 
 
 3.2500
@@ -32,7 +19,7 @@ ok = Notebook('lab01.ok')
 
 # Notice that we didn't have to `print`. When you run a notebook cell, if the last line has a value, then Jupyter helpfully prints out that value for you. However, it won't print out prior lines automatically. If you want to print out a prior line, you need to add the `print` statement. Run the cell below to check.
 
-# In[ ]:
+# In[2]:
 
 
 print(2)
@@ -47,7 +34,7 @@ print(2)
 # ### 1.1. Arithmetic
 # The line in the next cell subtracts.  Its value is what you'd expect.  Run it.
 
-# In[ ]:
+# In[3]:
 
 
 3.25 - 1.5
@@ -57,13 +44,13 @@ print(2)
 # 
 # The order of operations is what you learned in elementary school, and Python also has parentheses.  For example, compare the outputs of the cells below. Use parentheses for a happy new year!
 
-# In[ ]:
+# In[4]:
 
 
 2+6*5-6*3**2*2**3/4*7
 
 
-# In[ ]:
+# In[5]:
 
 
 2+(6*5-(6*3))**2*((2**3)/4*7)
@@ -71,19 +58,19 @@ print(2)
 
 # In standard math notation, the first expression is
 # 
-# $$1 + 6 \times 5 - 6 \times 3^2 \times \frac{2^3}{4} \times 7,$$
+# $$2 + 6 \times 5 - 6 \times 3^2 \times \frac{2^3}{4} \times 7,$$
 # 
 # while the second expression is
 # 
-# $$1 + (6 \times 5 - (6 \times 3))^2 \times (\frac{(2^3)}{4} \times 7).$$
+# $$2 + (6 \times 5 - (6 \times 3))^2 \times (\frac{(2^3)}{4} \times 7).$$
 # 
-# **Question 1.1.1.** <br /> Write a Python expression in this next cell that's equal to $5 \times (3 \frac{10}{11}) - 50 \frac{1}{3} + 2^{.5 \times 22} - \frac{7}{33}$.  That's five times three and ten elevenths, minus fifty and a third, plus two to the power of half 22, minus 7 33rds.  By "$3 \frac{10}{11}$" we mean $3+\frac{10}{11}$, not $3 \times \frac{10}{11}$.
+# **Question 1.1.1.** <br /> Write a Python expression in this next cell that's equal to $5 \times (3 \frac{10}{11}) - 49 \frac{1}{3} + 2^{.5 \times 22} - \frac{7}{33}$.  That's five times three and ten elevenths, minus 49 and a third, plus two to the power of half of 22, minus 7 33rds.  By "$3 \frac{10}{11}$" we mean $3+\frac{10}{11}$, not $3 \times \frac{10}{11}$.
 # 
 # Replace the ellipses (`...`) with your expression.  Try to use parentheses only when necessary.
 # 
-# *Hint:* The correct output should start with a familiar number.
+# *Hint:* The correct output should be a familiar number.
 
-# In[ ]:
+# In[6]:
 
 
 ...
@@ -96,7 +83,7 @@ print(2)
 # 
 # In Python, we do this with *assignment statements*. An assignment statement has a name on the left side of an `=` sign and an expression to be evaluated on the right.
 
-# In[ ]:
+# In[7]:
 
 
 ten = 3 * 2 + 4
@@ -106,7 +93,7 @@ ten = 3 * 2 + 4
 # 
 # After you run that cell, the value 10 is bound to the name `ten`:
 
-# In[ ]:
+# In[8]:
 
 
 ten
@@ -124,7 +111,7 @@ ten
 
 # A common pattern in Jupyter notebooks is to assign a value to a name and then immediately evaluate the name in the last line in the cell so that the value is displayed as output. 
 
-# In[ ]:
+# In[9]:
 
 
 close_to_pi = 355/113
@@ -133,7 +120,7 @@ close_to_pi
 
 # Another common pattern is that a series of lines in a single cell will build up a complex computation in stages, naming the intermediate results.
 
-# In[ ]:
+# In[10]:
 
 
 bimonthly_salary = 840
@@ -147,7 +134,7 @@ yearly_salary
 # 
 # Other than those rules, what you name something doesn't matter *to Python*.  For example, this cell does the same thing as the above cell, except everything has a different name:
 
-# In[ ]:
+# In[11]:
 
 
 a = 840
@@ -161,11 +148,11 @@ d
 # 
 # According to a famous joke among computer scientists, naming things is one of the two hardest problems in computer science.  (The other two are cache invalidation and "off-by-one" errors.  And people say computer scientists have an odd sense of humor...)
 
-# **Question 2.2.** <br /> Assign the name `seconds_in_a_decade` to the number of seconds between midnight January 1, 2010 and midnight January 1, 2020.
+# **Question 2.2.** <br /> Assign the name `seconds_in_a_decade` to the number of seconds between midnight January 1, 2010 and midnight January 1, 2020. Use Python to perform any required arithmetic.
 # 
 # *Hint:* If you're stuck, the next section shows you how to get hints.
 
-# In[ ]:
+# In[12]:
 
 
 # Change the next line so that it computes the number of
@@ -180,9 +167,25 @@ seconds_in_a_decade
 
 
 # ### 2.1. Checking your code
-# Now that you know how to name things, you can start using the built-in *tests* to check whether your work is correct. Try not to change the contents of the test cells. Running the following cell will test whether you have assigned `seconds_in_a_decade` correctly in Question 3.2. If you haven't, this test will tell you the correct answer. Resist the urge to just copy it, and instead try to adjust your expression. (Sometimes the tests will give hints about what went wrong...)
+# Now that you know how to name things, you can start using the built-in *tests* to check whether your work is correct. Try not to change the contents of the test cells. 
+# 
+# The cell below appears only once in the notebook and loads all of the tests so that they can be run later. You can load all of the tests before you answer all questions in the notebook. You will run tests as you go to check your work along the way, and you can also run all of the tests at the end to make sure that you will receive full credit on the lab.
 
-# In[ ]:
+# In[13]:
+
+
+# These lines load the tests.
+from client.api.notebook import Notebook
+ok = Notebook('lab01.ok')
+
+
+# Running the following cell will test whether you have assigned `seconds_in_a_decade` correctly in Question 2.2. 
+# 
+# Sometimes the tests will give hints about what went wrong. If the test doesn't pass, read the output, adjust your answer to the question, run the answer cell again to update the name `seconds_in_a_decade`, then run this test cell again.
+# 
+# Sometimes the tests will tell you the answer. Rather than copying the answer, try to understand how it was reached. 
+
+# In[14]:
 
 
 # Test cell; please do not change!
@@ -204,7 +207,7 @@ _ = ok.grade('q22')
 # 
 # You can run the following cell to watch a video of the experiment.
 
-# In[ ]:
+# In[15]:
 
 
 from IPython.display import YouTubeVideo
@@ -235,7 +238,7 @@ YouTubeVideo("U7db6ZeLR5s")
 
 # **Question 2.3.1.** <br /> Complete the code in the next cell to fill in the *data* from the experiment.
 
-# In[ ]:
+# In[16]:
 
 
 # t, the duration of the fall in the experiment, in seconds.
@@ -247,7 +250,7 @@ time = ...
 estimated_distance_m = ...
 
 
-# In[ ]:
+# In[17]:
 
 
 _ = ok.grade('q231')
@@ -257,7 +260,7 @@ _ = ok.grade('q231')
 # 
 # This just means translating the formula above ($\frac{1}{2}G\frac{M}{R^2}t^2$) into Python code.  You'll have to replace each variable in the math formula with the name we gave that number in Python code.
 
-# In[ ]:
+# In[18]:
 
 
 # First, we've written down the values of the 3 universal
@@ -286,7 +289,7 @@ difference = predicted_distance_m - estimated_distance_m
 difference
 
 
-# In[ ]:
+# In[19]:
 
 
 _ = ok.grade('q232')
@@ -298,13 +301,13 @@ _ = ok.grade('q232')
 # 
 # For example, the `abs` function takes a single number as its argument and returns the absolute value of that number.  The absolute value of a number is its distance from 0 on the number line, so `abs(5)` is 5 and `abs(-5)` is also 5.
 
-# In[ ]:
+# In[20]:
 
 
 abs(5)
 
 
-# In[ ]:
+# In[21]:
 
 
 abs(-5)
@@ -321,7 +324,7 @@ abs(-5)
 # 
 # **Question 3.1.1.** <br /> Finish the line `num_avenues_away = ...` in the next cell so that the cell calculates the distance Chunhua must walk and gives it the name `manhattan_distance`.  Everything else has been filled in for you.  **Use the `abs` function.**
 
-# In[ ]:
+# In[22]:
 
 
 # Here's the number of streets away:
@@ -344,7 +347,7 @@ manhattan_distance
 
 # Be sure to run the next cell to test your code.
 
-# In[ ]:
+# In[23]:
 
 
 _ = ok.grade('q311')
@@ -353,7 +356,7 @@ _ = ok.grade('q311')
 # ##### Multiple arguments
 # Some functions take multiple arguments, separated by commas. For example, the built-in `max` function returns the maximum argument passed to it.
 
-# In[ ]:
+# In[24]:
 
 
 max(2, -3, 4, -5)
@@ -376,7 +379,7 @@ max(2, -3, 4, -5)
 # 
 # And here's how we'd write that in one line of Python code:
 
-# In[ ]:
+# In[25]:
 
 
 abs(1.21 - 1.688)
@@ -396,7 +399,7 @@ abs(1.21 - 1.688)
 # 
 # <img src="numberline_1.png" alt="number line showing height difference and teaching abs value">
 
-# In[ ]:
+# In[26]:
 
 
 # Replace the ... with an expression to compute the absolute
@@ -409,7 +412,7 @@ botan_distance_from_average_m = ...
 botan_distance_from_average_m
 
 
-# In[ ]:
+# In[27]:
 
 
 _ = ok.grade('q41')
@@ -418,7 +421,7 @@ _ = ok.grade('q41')
 # ### 4.1. More nesting
 # Now say that we want to compute the most unusual height among Aditya's and Botan's heights.  We'll use the function `max`, which (again) takes two numbers as arguments and returns the larger of the two arguments.  Combining that with the `abs` function, we can compute the biggest distance from the average among the two heights:
 
-# In[ ]:
+# In[28]:
 
 
 # Just read and run this cell.
@@ -445,7 +448,7 @@ print("The biggest distance from the average height among these two people is", 
 # 
 # You can run the next cell to see a slideshow of that process.
 
-# In[ ]:
+# In[29]:
 
 
 from IPython.display import IFrame
@@ -456,7 +459,7 @@ IFrame('https://docs.google.com/presentation/d/1urkX-nRsD8VJvcOnJsjmCy0Jpv752Ssn
 # 
 # **Question 4.1.1.** <br /> Given the heights of the Splash Triplets from the Golden State Warriors, write an expression that computes the smallest difference between any of the three heights. Your expression shouldn't have any numbers in it, only function calls and the names `klay`, `steph`, and `kevin`. Give the value of your expression the name `min_height_difference`.
 
-# In[ ]:
+# In[30]:
 
 
 # The three players' heights, in meters:
@@ -476,23 +479,98 @@ kevin = 2.06 # Kevin Durant is officially 6'9", but many suspect that he is tall
 min_height_difference = ...
 
 
-# In[ ]:
+# In[31]:
 
 
 _ = ok.grade('q411')
 
 
-# ## 5. Submission
+# ## 5. Tables
 
-# Congratulations, you're done with lab 1!  Be sure to 
-# - **run all the tests and verify that they all pass** (the next cell has a shortcut for that), 
-# - **Review the notebook one last time, we will be grading the final state of your notebook after the deadline**,
-# - **Save and Checkpoint** from the `File` menu,
+# A website called [Gapminder](https://www.gapminder.org/) collects a large variety of measurements of human health, education, and progress. Each measurement is published in a table that has one row per country and one column per year, describing how the measurement varies over time and place.
+# 
+# For example, [this table](https://docs.google.com/spreadsheets/d/1kmnYQzXLGVF9RbKB3Y-WuUsJFumnE4s2UWdmlskv6r4/pub#) describes the average number of years of school attended by all women 25 and older. The table has a row for each of 175 countries and a column for each year from 1970 through 2009. The data were estimated for a study by the [Institute for Health Metrics and Evaluation](http://www.healthmetricsandevaluation.org/) called "Increased educational attainment and its impact on child mortality: a systematic analysis in 175 countries from 1970 to 2009" ([link](http://www.healthmetricsandevaluation.org/resources/datasets/2010/education_attainment/education_attainment.html&sa=D&ust=1522644678563000&usg=AFQjCNG-Rn_hO868jLLBz6FRLT8LSqwUVA)).
+# 
+# To load tables into Python, you must first import the `datascience` module. The second line below makes sure that charts appear on the screen when you create them. You only need to execute these lines once per notebook (and each time you restart your kernel).
 
-# In[ ]:
+# In[32]:
+
+
+# Don't change this cell
+from datascience import *
+get_ipython().run_line_magic('matplotlib', 'inline')
+
+
+# Now, run the next cell in order to load the table describing years of school attended by women around the world and over time. Only the first 10 rows of the table will be displayed.
+
+# In[33]:
+
+
+school = Table.read_table('school.csv')
+school
+
+
+# **Question 5.1.**
+# Assign the name `top_1970` to a two-column table that has the column of country names (labeled `"Row Labels"`) and the years in school in 1970, sorted by the second column in decreasing order. Notice the large difference between the country with the most average years of school and the rest in the top 10.
+# 
+# *Hint*: Even though 1970 is a number, treat it as text by placing it within quotation marks when using it as a label. For example, `school.select("1970")` rather than `school.select(1970)`. Column labels are always text.
+
+# In[34]:
+
+
+top_1970 = ...
+top_1970
+
+
+# In[35]:
+
+
+_ = ok.grade('q51')
+
+
+# You can create a bar chart of all the countries in the data set using the expression below.
+
+# In[36]:
+
+
+top_1970.barh('Row Labels')
+
+
+# **Question 5.2** Now, to see how much these numbers have changed, assign `top_1970_with_2009` to a table with the rows in the same order, but include a third column for 2009 as well. The differences between countries are much smaller in 2009.
+
+# In[37]:
+
+
+top_1970_with_2009 = ...
+top_1970_with_2009
+
+
+# In[38]:
+
+
+_ = ok.grade('q52')
+
+
+# A bar chart for this three-column table will compare 1970 to 2009 for each country. Everywhere in the world, the average number of years that women attend school has increased, in some cases dramatically!
+
+# In[39]:
+
+
+top_1970_with_2009.barh('Row Labels')
+
+
+# The [Gapminder data browser](https://www.gapminder.org/data/) includes many other tables that you can explore as well. For more information on how to load a table from the web, try the course discussion forum.
+
+# ## 6. Completion
+
+# Congratulations, you're done with lab 1! You can check that all tests pass by running the next cell. If all the tests are passing in your notebook when we score everybody's assignment, then you will receive full credit.
+
+# In[40]:
 
 
 # For your convenience, you can run this cell to run all the tests at once!
 import os
 _ = [ok.grade(q[:-3]) for q in os.listdir("tests") if q.startswith('q')]
 
+
+# Finally, select **Save and Checkpoint** from the `File` menu below the Jupyter logo to save your work.
