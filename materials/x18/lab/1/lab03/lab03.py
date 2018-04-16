@@ -5,7 +5,7 @@
 # 
 # Welcome to lab 3!  
 # 
-# This week, we'll learn about *tables*, which let us work with multiple arrays of data about the same things.  Tables are described in [Chapter 6](http://www.inferentialthinking.com/chapters/06/tables.html) of the text.
+# This week, we will focus on manipulating tables.  Tables are described in [Chapter 6](http://www.inferentialthinking.com/chapters/06/tables.html) of the text.
 # 
 # First, set up the tests and imports by running the cell below.
 
@@ -125,7 +125,7 @@ _ = ok.grade('q2_2')
 
 # ## 3. Using lists
 # 
-# A *list* is another Python sequence type, similar to an array. It's different than an array because the values it contains can all have different types. A single list can contain `int` values, `float` values, and strings. Elements in a list can even be other lists! A list is created by giving a name to the list of values enclosed in square brackets and separated by commas. For example, `values_with_different_types = ['data', 8, ['lab', 3]]`
+# A *list* is another Python sequence type, similar to an array. It's different than an array because the values it contains can all have different types. A single list can contain `int` values, `float` values, and strings. Elements in a list can even be other lists! A list is created by giving a name to the list of values enclosed in square brackets and separated by commas. For example, `values_with_different_types = ['data', 8, 8.1]`
 # 
 # Lists can be useful when working with tables because they can describe the contents of one row in a table, which often  corresponds to a sequence of values with different types. A list of lists can be used to describe multiple rows.
 # 
@@ -581,7 +581,7 @@ berkeley_markets
 _ = ok.grade('q6_7')
 
 
-# ## 7. Summary and Submission
+# ## 7. Summary
 # 
 # For your reference, here's a table of all the functions and methods we saw in this lab.
 # 
